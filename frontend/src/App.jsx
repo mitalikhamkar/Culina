@@ -552,7 +552,12 @@ setTopPicks(shuffled.slice(0, 4));
 
         <div className="relative z-10 px-4">
           <h1 className="text-6xl md:text-8xl mb-6 tracking-tight">
-            <span className="hero-title-cook">Cook</span> <span className="hero-title-rest">What You Have</span>
+<span
+  className="hero-title-cook"
+  style={{ color: darkMode ? '#F4A825' : '' }}
+>
+  Cook
+</span> <span className="hero-title-rest">What You Have</span>
           </h1>
           <p className="text-xl text-[#6B7280] mb-8 max-w-2xl mx-auto font-medium leading-relaxed">
             Tell us what's in your kitchen. We'll tell you what to cook.
@@ -597,7 +602,11 @@ setTopPicks(shuffled.slice(0, 4));
           </div>
 
           <div className="flex overflow-x-auto gap-6 pb-8 pt-2 no-scrollbar snap-x snap-mandatory">
-            {topPicks.map((recipe, idx) => (
+            {topPicks.length === 0 ? (
+  <div className="text-center w-full py-10 text-gray-400 font-semibold">
+    Loading recipes...
+  </div>
+) : (topPicks.map((recipe, idx) => (
   <div
     key={recipe.id}
     className="top-pick-card min-w-[280px] flex flex-col snap-start"
@@ -652,7 +661,7 @@ setTopPicks(shuffled.slice(0, 4));
       </span>
     </div>
   </div>
-))}
+)))}
           </div>
         </div>
       </section>
