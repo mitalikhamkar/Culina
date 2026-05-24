@@ -40,7 +40,7 @@ const getIngredientEmoji = (ingName) => {
 };
 
 function RecipeModal({ recipe, userIngredients, pantryItems, darkMode, onClose }) {
-  const [servings, setServings] = useState(2);
+  
 
   useEffect(() => {
     const handleEsc = (e) => { if (e.key === 'Escape') onClose(); };
@@ -139,13 +139,7 @@ function RecipeModal({ recipe, userIngredients, pantryItems, darkMode, onClose }
       : 'bg-[#FFFBF5] border-[#F4A825]/20'
   }`}
 >
-  <span
-    className={`font-bold ${
-      darkMode ? 'text-white' : 'text-[#1A1A2E]'
-    }`}
-  >
-    Servings
-  </span>
+ 
 
   <div
     className={`flex items-center gap-4 px-4 py-2 rounded-lg border shadow-sm ${
@@ -154,27 +148,6 @@ function RecipeModal({ recipe, userIngredients, pantryItems, darkMode, onClose }
         : 'bg-white border-[#F4A825]/30'
     }`}
   >
-    <button
-      onClick={() => setServings(Math.max(1, servings - 1))}
-      className="text-[#E63946] font-extrabold text-xl hover:scale-110 transition-transform active:scale-95"
-    >
-      −
-    </button>
-
-    <span
-      className={`font-bold w-6 text-center text-lg ${
-        darkMode ? 'text-white' : 'text-[#1A1A2E]'
-      }`}
-    >
-      {servings}
-    </span>
-
-    <button
-      onClick={() => setServings(servings + 1)}
-      className="text-[#2D6A4F] font-extrabold text-xl hover:scale-110 transition-transform active:scale-95"
-    >
-      +
-    </button>
   </div>
 </div>
 
