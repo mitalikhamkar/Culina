@@ -131,26 +131,7 @@ function RecipeModal({ recipe, userIngredients, pantryItems, darkMode, onClose }
             }
           </div>
         </div>
-
-        <div
-  className={`rounded-xl p-4 mb-6 flex items-center justify-between border shadow-sm ${
-    darkMode
-      ? 'bg-[#25253A] border-[#3A3A55]'
-      : 'bg-[#FFFBF5] border-[#F4A825]/20'
-  }`}
->
- 
-
-  <div
-    className={`flex items-center gap-4 px-4 py-2 rounded-lg border shadow-sm ${
-      darkMode
-        ? 'bg-[#1A1A2E] border-[#3A3A55]'
-        : 'bg-white border-[#F4A825]/30'
-    }`}
-  >
-  </div>
-</div>
-
+        
         <div className="flex flex-col sm:flex-row gap-3">
           <button
             onClick={() => window.open('https://www.youtube.com/results?search_query=' + encodeURIComponent(recipe.youtubeSearch), '_blank')}
@@ -760,7 +741,7 @@ setTopPicks(shuffled.slice(0, 4));
                   </span>
                 </div>
                 {filteredExactMatches.length > 0 ? (
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                  <div className="flex overflow-x-auto gap-6 pb-4 scrollbar-hide snap-x snap-mandatory">
                     {filteredExactMatches.map((recipe, idx) => (
                       <RecipeCard
   key={recipe.id}
@@ -789,7 +770,7 @@ setTopPicks(shuffled.slice(0, 4));
                   </span>
                 </div>
                 {filteredPartialMatches.length > 0 ? (
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-h-[700px] overflow-y-auto p-4 bg-gray-50/50 rounded-2xl border border-gray-100 shadow-inner custom-scrollbar">
+                  <div className="flex overflow-x-auto gap-6 pb-4 scrollbar-hide snap-x snap-mandatory">
                     {filteredPartialMatches.map((recipe, idx) => (
                       <RecipeCard
   key={recipe.id}
@@ -818,7 +799,7 @@ setTopPicks(shuffled.slice(0, 4));
             <p className="section-subtitle">Ready in 10 minutes or less</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-h-[950px] overflow-y-auto pr-3 custom-scrollbar">
+          <div className="flex overflow-x-auto gap-6 pb-4 scrollbar-hide snap-x snap-mandatory">
             {quickRecipes.map((recipe, idx) => (
               <RecipeCard
   key={recipe.id}
@@ -837,7 +818,7 @@ setTopPicks(shuffled.slice(0, 4));
             <p className="section-subtitle">Discover fresh flavors straight from the kitchen</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="flex overflow-x-auto gap-6 pb-4 scrollbar-hide snap-x snap-mandatory">
             {cuisines.map(cuisine => (
               <div
                 key={cuisine.id}
@@ -866,7 +847,7 @@ setTopPicks(shuffled.slice(0, 4));
               <h3 className="text-4xl font-extrabold text-[#1A1A2E] capitalize flex items-center gap-4 mb-10 pb-6 border-b border-gray-200" style={{ fontFamily: "'Playfair Display', serif" }}>
                 {cuisines.find(c => c.id === activeCuisine)?.emoji} {activeCuisine} Classics
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-h-[950px] overflow-y-auto pr-3 custom-scrollbar">
+              <div className="flex overflow-x-auto gap-6 pb-4 scrollbar-hide snap-x snap-mandatory">
                 {cuisineRecipes[activeCuisine]?.map((recipe, idx) => (
                   <RecipeCard
   key={recipe.id}
@@ -887,7 +868,7 @@ setTopPicks(shuffled.slice(0, 4));
             <p className="section-subtitle">Smart recipes you can batch cook and store</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 pt-4">
+          <div className="flex overflow-x-auto gap-6 pb-4 scrollbar-hide snap-x snap-mandatory">
             {mealPrepRecipes.map((recipe, idx) => (
               <RecipeCard
   key={recipe.id}

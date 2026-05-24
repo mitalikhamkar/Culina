@@ -484,3 +484,11 @@ body.dark .match-reason {
   color: #D1FAE5;
   border-color: #10B981;
 }
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
