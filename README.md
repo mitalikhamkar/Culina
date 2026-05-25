@@ -24,9 +24,6 @@ Culina is a full-stack recipe web application where users can explore delicious 
 - Node.js
 - Express.js
 
-### Database
-- MongoDB
-
 ### APIs
 - Pexels API
 
